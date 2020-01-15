@@ -12,6 +12,7 @@ class CreateTodos extends Component {
     this.handleTodoSubmit = this.handleTodoSubmit.bind(this);
   }
 
+  //Save the input text in the "todo" string
   handleInputChange(event) {
     const userAddedInput = event.target.value;
     this.setState({
@@ -19,8 +20,10 @@ class CreateTodos extends Component {
     });
   }
 
+  //Fire off submit function
   handleTodoSubmit(event) {
     event.preventDefault();
+    //Add todo to the todoArray (FilterTodos file)
     this.props.onSubmit({
       id: shortid.generate(),
       todo: this.state.todo,

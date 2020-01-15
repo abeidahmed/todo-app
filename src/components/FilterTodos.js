@@ -20,12 +20,14 @@ class FilterTodos extends Component {
     this.handleSelectChange = this.handleSelectChange.bind(this);
     this.handleTodoDelete = this.handleTodoDelete.bind(this);
   }
+  //Add todo to the todoArray with mutation
   addTodo = todo => {
     this.setState({
       todoArray: [todo, ...this.state.todoArray]
     });
   };
 
+  //Toggle complete by clicking checkbox
   handleToggleComplete(id) {
     this.setState({
       todoArray: this.state.todoArray.map(item => {
@@ -41,6 +43,7 @@ class FilterTodos extends Component {
     });
   }
 
+  //Change the value of the select
   handleSelectChange(event) {
     this.setState({
       selectedValue: event.target.value

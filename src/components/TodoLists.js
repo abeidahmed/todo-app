@@ -1,5 +1,6 @@
 import React from "react";
 
+//Add filterable logic (data from select box => FilterTodos)
 const TodoLists = props => {
   let filteredTodo = [];
   if (props.todoType === "All") {
