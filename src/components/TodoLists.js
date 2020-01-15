@@ -41,7 +41,12 @@ const TodoLists = props => {
             >
               Edit
             </button>
-            <button className="button is-small is-light">Delete</button>
+            <button
+              onClick={() => props.onDelete(item.id)}
+              className="button is-small is-light"
+            >
+              Delete
+            </button>
           </div>
         </section>
       ))}

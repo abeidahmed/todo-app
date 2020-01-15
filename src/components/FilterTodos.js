@@ -18,6 +18,7 @@ class FilterTodos extends Component {
 
     this.handleToggleComplete = this.handleToggleComplete.bind(this);
     this.handleSelectChange = this.handleSelectChange.bind(this);
+    this.handleTodoDelete = this.handleTodoDelete.bind(this);
   }
   addTodo = todo => {
     this.setState({
@@ -43,6 +44,13 @@ class FilterTodos extends Component {
   handleSelectChange(event) {
     this.setState({
       selectedValue: event.target.value
+    });
+  }
+
+  //Delete todo
+  handleTodoDelete(id) {
+    this.setState({
+      todoArray: this.state.todoArray.filter(item => item.id !== id)
     });
   }
 
@@ -80,6 +88,7 @@ class FilterTodos extends Component {
         </div>
         <TodoLists
           className="section"
+          onDelete={this.handleTodoDelete}
           todoType={this.state.selectedValue}
           todoList={this.state.todoArray}
           toggleComplete={this.handleToggleComplete}
